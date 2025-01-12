@@ -3,7 +3,7 @@
     <nav class="f-nav">
       <ul>
         <li v-for="(icon, index) in menuItems" :key="index">
-          <AnchorPortfolio :href="icon.href">
+          <AnchorPortfolio :href="icon.href" target="_blank">
             <img :src="require(`@/assets/img/about/${icon.src}`)" alt="">
           </AnchorPortfolio>
         </li>
