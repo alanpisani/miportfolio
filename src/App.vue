@@ -1,27 +1,49 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <HeaderPortfolio/>
+  <MainPortfolio/>
+  <FooterPortfolio/>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+<script lang="ts" setup>
+import FooterPortfolio from './components/footer/FooterPortfolio.vue';
+import HeaderPortfolio from './components/header/HeaderPortfolio.vue';
+import MainPortfolio from './components/main/MainPortfolio.vue';
+import { onMounted } from 'vue';
 
-export default defineComponent({
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+onMounted(() => {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = (e.target as HTMLAnchorElement).getAttribute('href');
+      if (targetId) {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  });
 });
+
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui;
 }
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #232323;
+    background-color: #232323;
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
+  }
 </style>
