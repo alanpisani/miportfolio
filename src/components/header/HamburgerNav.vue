@@ -75,8 +75,7 @@ nav{
 
 ul{
     position:absolute;
-    top:70px;
-    right: 0;
+    top:50px;
     width: 50vw;
     height:0;
     transition: height .5s ease;
