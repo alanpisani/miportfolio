@@ -1,48 +1,50 @@
 <template>
     <header>
-        <nav>
-            <ul>
-                <li v-for="(item, index) in menuItems" :key="index">
-                    <AnchorPortfolio :href="item.href" customClass="header-link">
-                        {{ item.title }}
-                    </AnchorPortfolio>
-                </li>
-            </ul>
-        </nav>
+        <NavBar :menuItems="menuItems" v-if="!isSmallScreen"/>
+        <HamburgerNav :menuItems="menuItems" v-else/>
     </header>
 </template>
 
 <script lang="ts" setup>
-    import AnchorPortfolio from './AnchorPortfolio.vue';
+   
+    import NavBar from '../general/NavBar.vue';
     
-    interface iItem{
+    interface MenuItem{
         title:string,
-        href:string
+        href:string,
+        target:string,
+        customClass:string,
+        src: string
     }
 
-    const menuItems:Array<iItem> = [
-    { title: 'Sobre mi', href:"#sobre-mi" },
-    { title: 'Conocimientos', href: "#lenguajes" },
-    { title: 'Proyectos', href: '#proyectos' },
-    { title: 'Contacto', href: '#contacto' }
+    const menuItems:Array<MenuItem> = [
+    { title: 'Sobre mi', href:"#sobre-mi", target: "#sobre-mi", customClass:"header-link", src:""},
+    { title: 'Conocimientos', href: "#lenguajes", target: "#lenguajes", customClass:"header-link", src:""},
+    { title: 'Proyectos', href: '#proyectos', target: "#proyectos", customClass:"header-link", src:""},
+    { title: 'Contacto', href: '#contacto', target: "#contacto", customClass:"header-link", src:""}
 ];
+
+import { ref, onMounted, onUnmounted } from 'vue';
+import HamburgerNav from './HamburgerNav.vue';
+
+const isSmallScreen = ref(window.innerWidth <= 770);
+
+function updateScreenSize() {
+  isSmallScreen.value = window.innerWidth <= 770;
+}
+
+onMounted(() => {
+  window.addEventListener('resize', updateScreenSize);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updateScreenSize);
+});
 </script>
 
 <style scoped>
 header {
     background-color: #282c34;
     color: #fff;
-    padding: 1rem;
-    
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-}
-
-li {
-    margin: 0 1rem;
 }
 </style>

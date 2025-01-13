@@ -1,30 +1,29 @@
 <template>
   <footer id="contacto">
-    <nav class="f-nav">
-      <ul>
-        <li v-for="(icon, index) in menuItems" :key="index">
-          <AnchorPortfolio :href="icon.href" target="_blank">
-            <img :src="require(`@/assets/img/about/${icon.src}`)" alt="">
-          </AnchorPortfolio>
-        </li>
-      </ul>
-    </nav>
+    <NavBar :menuItems="menuItems" customNavClass="f-nav">
+    <template #menu-item="{ item }">
+      <img :src="require(`@/assets/img/about/${item.src}`)" :alt="item.title" v-if="item.src" />
+      <span v-else>{{ item.title }}</span>
+    </template>
+  </NavBar>
   </footer>
 </template>
 
 <script lang="ts" setup>
-    import AnchorPortfolio from "../header/AnchorPortfolio.vue"
+    import NavBar from '../general/NavBar.vue'
     
-    interface iItem{
+    interface Menuitem{
         title:string,
         href:string,
         src:string
+        target: string,
+        customClass: string
     }
 
-    const menuItems:Array<iItem> = [
-    { title: 'instagram', href:"https://www.instagram.com/alan.pisani/", src: "instagram.svg" },
-    { title: 'linkedin', href: "https://www.linkedin.com/in/alan-pisani/", src:"linkedin.svg" },
-    { title: 'github', href: 'https://github.com/alanpisani', src:"github.svg" },
+    const menuItems:Array<Menuitem> = [
+    { title: "instagram", href:"https://www.instagram.com/alan.pisani/", src: "instagram.svg", target: "_blank", customClass: "" },
+    { title: 'linkedin', href: "https://www.linkedin.com/in/alan-pisani/", src:"linkedin.svg", target: "_blank", customClass: "" },
+    { title: 'github', href: 'https://github.com/alanpisani', src:"github.svg", target: "_blank", customClass: "" },
 ];
 </script>
 
@@ -36,23 +35,7 @@ footer {
     color: #fff;
   }
 
-.f-nav{
-    list-style: none;
-    display: flex;
-    justify-content: end;
-}
-
-.f-nav img{
+img{
     width: 50px;
-}
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-}
-
-li {
-    margin: 0 1rem;
 }
 </style>

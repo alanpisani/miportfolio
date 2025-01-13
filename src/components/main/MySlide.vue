@@ -25,6 +25,5 @@ const props = defineProps({
 
 .slide img{
     width: 100px;
-    
 }
 </style>

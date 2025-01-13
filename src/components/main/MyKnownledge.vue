@@ -71,8 +71,7 @@ const sliders:Array<iSlider> = [
 }
 
 .slider .slide img{
-    width: 100px;
-    
+    width: 100px;  
 }
 
 @keyframes scroll{

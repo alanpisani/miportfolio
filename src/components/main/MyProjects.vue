@@ -45,7 +45,6 @@ const projects = [
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
-
   }
   .proyectos-container:hover > :not(:hover){
     opacity: 0.5;
