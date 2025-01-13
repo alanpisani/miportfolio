@@ -35,7 +35,7 @@ onMounted(() => {
   padding: 0;
   box-sizing: border-box;
   font-family: system-ui;
-  z-index: 0; 
+  z-index: 0;
 }
 
 body {

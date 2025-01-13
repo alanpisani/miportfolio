@@ -9,7 +9,7 @@
         <ul>
             <li v-for="(item, index) in props.menuItems" :key="index">
                 <a :href="item.href" :target="item.target" :class="item.customClass" @click="uncheckMenu">
-                    <slot name="menu-item" :item="item">{{ item.title }}</slot>
+                    <slot name="menu-item" :item="item" class="item-menu">{{ item.title }}</slot>
                 </a>
             </li>
         </ul>
@@ -63,66 +63,82 @@ const uncheckMenu = () => {
 </script>
 
 <style scoped>
-nav{
-    display:flex;
-    justify-content:flex-end;
+nav {
+    display: flex;
+    justify-content: flex-end;
     padding: 16px;
     position: fixed;
     background-color: #232323;
     width: 100%;
-    z-index:1000;
+    z-index: 1000;
 }
 
-ul{
-    position:absolute;
-    top:50px;
+ul {
+    position: absolute;
+    top: 50px;
+    right: 0;
     width: 50vw;
-    height:0;
-    transition: height .5s ease;
-    display:none
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: height 0.5s ease, opacity 0.5s ease;
+    background-color: #232323;
+    border: 2px solid greenyellow;
+    box-shadow: 0 0 5px greenyellow;
 }
 
-li{
-    margin-left:20px 0;
+li {
+    margin: 10px 0;
     width: 100%;
     list-style: none;
 }
 
-a{
-    width:100%;
+a {
+    width: 100%;
     text-decoration: none;
     color: white;
-    font-size:10px;
+    font-size: 15px;
     padding: 10px 20px;
 }
 
-label{
-    display:flex;
+label {
+    display: flex;
     flex-direction: column;
     cursor: pointer;
 }
 
-#menu{
+#menu {
     opacity: 0;
     display: flex;
     flex-direction: column;
     position: relative;
 }
 
-span{
+span {
     width: 20px;
     height: 3px;
     background-color: greenyellow;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     margin: 2px 0;
 }
 
-#menu:checked + label + ul{
-    display:flex;
-    flex-direction: column;
+#menu:checked + label + ul {
     height: 70vh;
-    background-color: #232323;
-    border:2px solid greenyellow;
-    box-shadow: 0 0 5px greenyellow;
+    opacity: 1;
+    visibility: visible;
+    /* overflow: visible; */
+}
+
+#menu:checked + label span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 5px);
+}
+
+#menu:checked + label span:nth-child(2) {
+    transform: scale(0);
+}
+
+#menu:checked + label span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -4px);
 }
 </style>
