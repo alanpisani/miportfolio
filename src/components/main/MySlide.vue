@@ -19,8 +19,6 @@ const props = defineProps({
 <style scoped>
 .slide{
     width: 100px;
-    margin-left: 10px;
-    margin-right: 10px;
 }
 
 .slide img{

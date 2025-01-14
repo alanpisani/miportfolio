@@ -55,7 +55,7 @@ const props = defineProps({
 });
 
 const uncheckMenu = () => {
-    const checkbox = document.getElementById('menu') as HTMLInputElement;
+    const checkbox:HTMLInputElement = document.getElementById('menu') as HTMLInputElement;
     if (checkbox) {
         checkbox.checked = false;
     }

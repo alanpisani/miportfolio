@@ -19,6 +19,7 @@ import ProfilePortfolio from './ProfilePortfolio.vue';
 <style scoped>
 main{
   width:100vw;
+  margin-top: 27px;
 }
   section {
     padding: 2rem;

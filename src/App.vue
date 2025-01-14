@@ -46,5 +46,5 @@ body {
     display: grid;
     min-height: 100dvh;
     grid-template-rows: auto 1fr auto;
-  }
+}
 </style>

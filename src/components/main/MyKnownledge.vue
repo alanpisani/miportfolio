@@ -49,29 +49,31 @@ const sliders:Array<iSlider> = [
 
 <style scoped>
 
+
+section{
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
 .slider{
     width:70vw;
     height: auto;
     margin: auto;
     overflow: hidden;
-  
+    border: 1px solid greenyellow;
+    box-shadow: 0 0 10px greenyellow ;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 3px;
+    border-radius: 10px;
 }
 
 .slider .slide-track{
     display: flex;
     animation: scroll 20s linear infinite;
     -webkit-animation: scroll 20s linear infinite;
+    gap: 20px;
     width: calc(120px * 26);
-}
-
-.slider .slide{
-    width: 100px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.slider .slide img{
-    width: 100px;  
 }
 
 @keyframes scroll{

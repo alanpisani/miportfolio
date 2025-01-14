@@ -24,10 +24,10 @@
     { title: 'Contacto', href: '#contacto', target: "#contacto", customClass:"header-link", src:""}
 ];
 
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, Ref } from 'vue';
 import HamburgerNav from './HamburgerNav.vue';
 
-const isSmallScreen = ref(window.innerWidth <= 770);
+const isSmallScreen:Ref<boolean> = ref(window.innerWidth <= 770);
 
 function updateScreenSize() {
   isSmallScreen.value = window.innerWidth <= 770;
