@@ -36,6 +36,7 @@ onMounted(() => {
   box-sizing: border-box;
   font-family: system-ui;
   z-index: 0;
+  scrollbar-color:#adff2f #282c34;
 }
 
 body {
