@@ -33,6 +33,8 @@ footer {
     padding: 1rem;
     background-color: #282c34;
     color: #fff;
+    border-top: 1px solid greenyellow;
+    box-shadow: 0 0 5px greenyellow ;
   }
 
 img{

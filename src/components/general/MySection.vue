@@ -11,7 +11,7 @@
 <style scoped>
 div{
   padding: 2rem;
-    margin-top: 4rem;
+    margin-top: 4.5rem;
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
