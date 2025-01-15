@@ -3,18 +3,24 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps, defineEmits } from 'vue';
+import { defineProps } from 'vue';
 
 const props = defineProps({
   btnContent:{
     type: String,
     required: false,
     default: "Clickeame"
+  },
+  onClick: {
+    type: Function,
+    required: false,
+    default: () => {alert("Error al botonear")} 
   }
 });
 
-const emits = defineEmits(["onClick"]);
-const handleClick = () => emits("onClick");
+// const emits = defineEmits(["onClick"]);
+// const handleClick = () => emits("onClick");
+const handleClick = () => props.onClick();
 
 </script>
 

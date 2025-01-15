@@ -56,10 +56,7 @@ nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
-}
-
-li {
-    margin: 0 1rem;
+    gap: 1.5rem;
 }
 
 .header-link{
@@ -77,7 +74,4 @@ li {
     display: flex;
     justify-content: end;
 }
-
-
-
 </style>

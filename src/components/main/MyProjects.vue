@@ -1,16 +1,16 @@
 <template>
-  <section id="proyectos">
+  <MySection id="proyectos">
         <h2>Proyectos</h2>
         <div class="proyectos-container">
           <ProyectItem v-for="(project, index) in projects" :key="index" 
           :title="project.title" :content="project.content" :image="project.image" :href="project.href" :github-href="project.githubHref"/>
-        </div>
-        
-      </section>
+        </div>  
+  </MySection>
 </template>
 
 <script lang="ts" setup>
 import ProyectItem from './ProyectItem.vue';
+import MySection from '../general/MySection.vue';
 
 const projects = [
   {

@@ -17,14 +17,20 @@ import ProfilePortfolio from './ProfilePortfolio.vue';
 </script>
 
 <style scoped>
-main{
-  width:100vw;
-  margin-top: 27px;
-}
+  main{
+    
+    overflow: hidden;
+    width:75%;
+    margin: 0 auto;
+  }
   section {
     padding: 2rem;
     text-align: center;
     color: #ddd;
-   
   }
+@media (max-width: 770px) {
+  main {
+    width: 100vw;
+  }
+}
 </style>

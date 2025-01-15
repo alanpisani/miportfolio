@@ -1,16 +1,17 @@
 <template>
-  <section id="lenguajes">
+  <MySection my-id="lenguajes">
         <h2>Conocimientos</h2>
         <div class="slider">
           <div class="slide-track">
             <MySlide v-for="(slider, index) in sliders" :key="index" :route="slider.route"/>
           </div>
         </div>
-      </section>
+  </MySection>
 </template>
 
 <script lang="ts" setup>
 import MySlide from './MySlide.vue';
+import MySection from '../general/MySection.vue';
 
 interface iSlider{
   route:string
@@ -49,17 +50,8 @@ const sliders:Array<iSlider> = [
 
 <style scoped>
 
-
-section{
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
 .slider{
     width:70vw;
-    height: auto;
-    margin: auto;
     overflow: hidden;
     border: 1px solid greenyellow;
     box-shadow: 0 0 10px greenyellow ;

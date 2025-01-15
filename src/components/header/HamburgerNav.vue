@@ -1,10 +1,12 @@
 <template>
     <nav>
+        <p><span class="first-letter">A</span>lan <span class="first-letter">P</span>isani</p>
+    <div>
         <input type="checkbox" id="menu">
         <label for="menu" class="hamburguesa">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span class="barrita"></span>
+            <span class="barrita"></span>
+            <span class="barrita"></span>
         </label>
         <ul>
             <li v-for="(item, index) in props.menuItems" :key="index">
@@ -13,6 +15,7 @@
                 </a>
             </li>
         </ul>
+    </div>
     </nav>
   
 </template>
@@ -65,7 +68,8 @@ const uncheckMenu = () => {
 <style scoped>
 nav {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
     padding: 16px;
     position: fixed;
     background-color: #232323;
@@ -73,6 +77,13 @@ nav {
     z-index: 1000;
 }
 
+div{
+    display:flex;
+}
+.first-letter{
+    color: yellowgreen;
+    text-shadow: 0 0 5px yellowgreen;
+}
 ul {
     position: absolute;
     top: 50px;
@@ -115,7 +126,7 @@ label {
     position: relative;
 }
 
-span {
+.barrita{
     width: 20px;
     height: 3px;
     background-color: greenyellow;

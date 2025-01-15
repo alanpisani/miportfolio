@@ -1,15 +1,26 @@
 <template>
-    <section id="hero">
+    <MySection my-id="hero">
         <div class="hero-content">
           <img src="../../assets/img/cara.jpeg" alt="Mi Foto" class="profile-pic">
-          <h1>¡Hola! Soy Alan <span>🖐🏻</span></h1>
+          <h1>¡Hola! Soy Alan Pisani<span>🖐🏻</span></h1>
           <p>Programador apasionado por la tecnología y el desarrollo. poseo gran capacidad para aprender nuevas habilidades rápidamente, capacidad para trabajar en equipo</p>
+          <MyButton btnContent="Descargar cv" :onClick="downloadCv"/>
         </div>
-    </section>
+    </MySection>
 </template>
 
 <script lang="ts" setup>
+import MyButton from '../general/MyButton.vue';
+import MySection from '../general/MySection.vue';
 
+function downloadCv() {
+    const link = document.createElement('a');
+    link.href = '/cv-Alan-Pisani.pdf';
+    link.download = 'cv Alan Pisani.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
 </script>
 
 <style scoped>
@@ -17,6 +28,7 @@
 span{
     display: inline-block;
     animation: girar 1s linear infinite;
+    
   }
 
   @keyframes girar{
@@ -33,12 +45,14 @@ span{
       transform: rotate(0deg);
     }
   }
-  #hero {
-    text-align: center;
-    padding: 2rem;
-    color: #fff;
+    
+  .hero-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
   }
-  
+
   .hero-content .profile-pic {
     border-radius: 50%;
     border: 2px solid greenyellow;
@@ -46,7 +60,7 @@ span{
     width: 175px;
     height: 175px;
     object-fit: cover;
-    margin-bottom: 1rem;
+    
     transition: .3s ease;
   }
   

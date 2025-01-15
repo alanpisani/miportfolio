@@ -38,4 +38,11 @@ footer {
 img{
     width: 50px;
 }
+@media (max-width: 780px) {
+  img{
+    width:40px
+  }
+} 
+  
+
 </style>
