@@ -1,19 +1,11 @@
 <template>
-  <div :my-id="props.customId">
+  <div>
     <slot></slot>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { defineComponent } from 'vue';
 
-const props = defineComponent({
-    customId:{
-        type: String,
-        required: false,
-        default: ""
-    }
-})
 </script>
 
 <style scoped>

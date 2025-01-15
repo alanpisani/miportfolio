@@ -1,5 +1,5 @@
 <template>
-    <MySection my-id="sobre-mi">
+    <MySection id="sobre-mi">
         <h2>Sobre mí</h2>
         <p>Actualmente me encuentro en el tercer año de la carrera de tecnicatura superior en análisis de sistemas. Tengo conocimientos tanto en front como en backend, pero mi fuerte son Java y Spring. Me encanta resolver problemas y crear soluciones eficientes.</p>
     </MySection>

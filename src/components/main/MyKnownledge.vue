@@ -1,5 +1,5 @@
 <template>
-  <MySection my-id="lenguajes">
+  <MySection id="lenguajes">
         <h2>Conocimientos</h2>
         <div class="slider">
           <div class="slide-track">
