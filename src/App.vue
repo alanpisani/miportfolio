@@ -38,14 +38,18 @@ onMounted(() => {
   z-index: 0;
   scrollbar-color:#adff2f #282c34;
 }
+*::selection{
+  color: #282c34;
+  background-color: yellowgreen;
+}
 
 body {
-    font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #232323;
+    color: white;
     background-color: #232323;
     display: grid;
     min-height: 100dvh;
     grid-template-rows: auto 1fr auto;
 }
+
 </style>

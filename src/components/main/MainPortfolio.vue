@@ -18,19 +18,12 @@ import ProfilePortfolio from './ProfilePortfolio.vue';
 
 <style scoped>
   main{
-    
-    overflow: hidden;
-    width:75%;
-    margin: 0 auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin-top: 4.5rem;
+    margin-bottom: 2rem;
   }
-  section {
-    padding: 2rem;
-    text-align: center;
-    color: #ddd;
-  }
-@media (max-width: 770px) {
-  main {
-    width: 100vw;
-  }
-}
 </style>
