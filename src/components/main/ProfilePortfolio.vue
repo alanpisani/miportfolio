@@ -3,7 +3,8 @@
         <div class="hero-content">
           <img src="../../assets/img/cara.jpeg" alt="Mi Foto" class="profile-pic">
           <h1>¡Hola! Soy Alan Pisani<span>🖐🏻</span></h1>
-          <p>Programador apasionado por la tecnología y el desarrollo. poseo gran capacidad para aprender nuevas habilidades rápidamente, capacidad para trabajar en equipo</p>
+          <p>Programador apasionado por la tecnología. Poseo gran capacidad para aprender nuevas habilidades rápidamente y con capacidad para desarrollar y
+            aprender nuevos conocimientos para crecer de forma profesional y personal.</p>
           <MyButton btnContent="Descargar cv" :onClick="downloadCv"/>
         </div>
     </MySection>
