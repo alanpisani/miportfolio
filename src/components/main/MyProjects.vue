@@ -30,6 +30,7 @@ const projects = [
     title: "Lista de tareas",
     content: "Aplicación web con API RESTful en el backend. La aplicación permite crear una cuenta de usuario a través de un registro. Cada usuario posee su propia lista de tareas, las cuales podrá crear, marcarlas como realizadas o borrarlas.",
     image: "todo.png",
+    href: "https://lista-de-tareas-y8j7.onrender.com/",
     githubHref: "https://github.com/alanpisani/lista-de-tareas"
   },
   {
