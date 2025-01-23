@@ -14,6 +14,13 @@ import MySection from '../general/MySection.vue';
 
 const projects = [
   {
+    title: "Lista de tareas",
+    content: "Aplicación web con API RESTful en el backend. La aplicación permite crear una cuenta de usuario a través de un registro. Cada usuario posee su propia lista de tareas, las cuales podrá crear, marcarlas como realizadas o borrarlas.",
+    image: "todo.png",
+    href: "https://lista-de-tareas-y8j7.onrender.com/",
+    githubHref: "https://github.com/alanpisani/lista-de-tareas"
+  },
+  {
     title: "Sala de escape",
     content: "Juego de sala de escape con temporizador y un ranking en el que figuran los 10 mejores jugadores, los cuales son guardados en una base de datos.",
     image: "escape.png",
@@ -27,23 +34,12 @@ const projects = [
     githubHref: ""
   },
   {
-    title: "Lista de tareas",
-    content: "Aplicación web con API RESTful en el backend. La aplicación permite crear una cuenta de usuario a través de un registro. Cada usuario posee su propia lista de tareas, las cuales podrá crear, marcarlas como realizadas o borrarlas.",
-    image: "todo.png",
-    href: "https://lista-de-tareas-y8j7.onrender.com/",
-    githubHref: "https://github.com/alanpisani/lista-de-tareas"
-  },
-  {
     title: "E-commerce",
     content: "E-commerce de productos hecho en impresora 3D. Por el momento la página solo contiene el frontend. Hecha con html5, css3 y JavaScript vanilla.",
     image: "coshita.png",
     href: "https://alanpisani.github.io/coshita-3D/",
     githubHref: "https://github.com/alanpisani/coshita-3D"  
   },
-  // {
-  //   image: "no.png",
-  //   githubHref: "https://github.com/alanpisani/Sala-de-escape"
-  // },
 ]
 </script>
 
