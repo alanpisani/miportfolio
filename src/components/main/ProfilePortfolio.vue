@@ -15,8 +15,12 @@ import MyButton from '../general/MyButton.vue';
 import MySection from '../general/MySection.vue';
 
 function downloadCv() {
+
+    const baseUrl = window.location.pathname.includes("miportfolio") 
+      ? "/miportfolio/" 
+      : "/";
     const link = document.createElement('a');
-    link.href = '/cv-Alan-Pisani.pdf';
+    link.href = `${baseUrl}cv-Alan-Pisani.pdf`;
     link.download = 'cv Alan Pisani.pdf';
     document.body.appendChild(link);
     link.click();
